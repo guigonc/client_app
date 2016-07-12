@@ -2,7 +2,7 @@ var path = require('path');
 var config = {
   entry: [
       'webpack/hot/dev-server',
-      'webpack-dev-server/client?http://:8080',
+      'webpack-dev-server/client?http://0.0.0.0:8080',
       path.resolve(__dirname, 'app/main.js')
     ],
   output: {
@@ -25,6 +25,10 @@ var config = {
     {
       test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
       loader: "file-loader"
+    },
+    {
+      test: /\.(png|jpg|jpeg)$/,
+      loader: 'url-loader?limit=8192'
     }]
   }
 };

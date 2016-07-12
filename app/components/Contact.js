@@ -1,9 +1,46 @@
 import React from 'react'
 import { Link } from 'react-router';
+import { PageHeader, Form, FormGroup, FormControl, ControlLabel, Col, Button } from 'react-bootstrap';
 
 const Contact = ({}) => (
   <div>
-    Contact
+    <PageHeader>Be one of the first to know our service</PageHeader>
+    <Form horizontal>
+      <FormGroup controlId="formHorizontalName">
+        <Col componentClass={ControlLabel} sm={2}>
+          Name
+        </Col>
+        <Col sm={8}>
+          <FormControl type="text" placeholder="Name" />
+        </Col>
+      </FormGroup>
+
+      <FormGroup controlId="formHorizontalEmail">
+        <Col componentClass={ControlLabel} sm={2}>
+          Email
+        </Col>
+        <Col sm={8}>
+          <FormControl type="email" placeholder="Email" />
+        </Col>
+      </FormGroup>
+
+      <FormGroup controlId="formHorizontalPhone">
+        <Col componentClass={ControlLabel} sm={2}>
+          Phone
+        </Col>
+        <Col sm={8}>
+          <FormControl type="phone" placeholder="Phone" />
+        </Col>
+      </FormGroup>>
+
+      <FormGroup>
+        <Col smOffset={2} sm={10}>
+          <Button type="submit">
+            Send
+          </Button>
+        </Col>
+      </FormGroup>
+    </Form>
   </div>
 )
 
