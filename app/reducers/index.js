@@ -1,8 +1,4 @@
-import example from './example';
+import contact from './contact';
 
 import { combineReducers } from 'redux';
-
-export default combineReducers({
-  example
-  // Add more reducers here
-})
+export default combineReducers({contact})
