@@ -1,4 +1,4 @@
-import {SET_FIELD, ADD_CONTACT} from '../actions/index'
+import { SET_FIELD, ADD_CONTACT } from '../actions/index'
 
 export default (state = {data: {}, added: false}, action) => {
   switch (action.type) {

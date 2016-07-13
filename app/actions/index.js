@@ -14,9 +14,9 @@ export const setField = (field, value) => (
 
 export const addAssyncContact = (contact) => {
   return (dispatch) => {
-    hashHistory.push('/created')
     dispatch(addContact());
     fetch('http://api.contactracker.com/contacts.json', { method: 'POST', body: JSON.stringify({ contact: contact }), headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' } })
+    .then(response => { if (response.ok) hashHistory.push('/created') })
   }
 }
 

@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import { Navbar, Nav, NavItem, Grid } from 'react-bootstrap'
-
-const App = ({ children }) => (
+import { track } from '../../lib/tracker'
+const App = ({ children, path }) => (
   <div>
     <Navbar>
       <Navbar.Header>
@@ -17,6 +17,7 @@ const App = ({ children }) => (
       </Nav>
     </Navbar>
     <Grid>
+      {track(path)}
       {children}
     </Grid>
   </div>
