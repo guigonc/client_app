@@ -16,7 +16,7 @@ export const addAssyncContact = (contact) => {
   return (dispatch) => {
     hashHistory.push('/created')
     dispatch(addContact());
-    fetch((process.env.API_URL || 'https://contactracker.herokuapp.com/') + '/contacts.json', { method: 'POST', body: JSON.stringify({ contact }), headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' } })
+    fetch('http://api.contactracker.com/contacts.json', { method: 'POST', body: JSON.stringify({ contact: contact }), headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' } })
   }
 }
 
