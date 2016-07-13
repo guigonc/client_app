@@ -17,7 +17,7 @@ export const addAssyncContact = (contact) => {
     dispatch(addContact());
 
     var hash_identity = document.cookie.replace(/(?:(?:^|.*;\s*)hash_identity\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-    fetch('http://api.contactracker.com/contacts.json', { method: 'POST', body: JSON.stringify({contact: {...contact, hash_identity} }), headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' } })
+    fetch((process.env.API_URL || 'https://contactracker.herokuapp.com') + '/contacts.json', { method: 'POST', body: JSON.stringify({contact: {...contact, hash_identity} }), headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' } })
     .then(response => { if (response.ok) hashHistory.push('/created') })
   }
 }
