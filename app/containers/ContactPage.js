@@ -2,13 +2,15 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import Contact from '../components/Contact'
-// import { thunkExample } from '../actions/example'
+import { setField, addAssyncContact } from '../actions/index'
 
-// let mapStateToProps = state => ({})
-//
-// let mapDispatchToProps = dispatch => ({
-//   thunkExample: () => dispatch(thunkExample())
-// })
+let mapStateToProps = state => ({
+  contact: state.contact.data,
+})
 
-// export default connect(mapStateToProps, mapDispatchToProps)(App)
-export default connect()(Contact)
+let mapDispatchToProps = dispatch => ({
+  setField: (field, value) => dispatch(setField(field, value)),
+  addContact: (contact) => dispatch(addAssyncContact(contact))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Contact)

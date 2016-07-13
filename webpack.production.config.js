@@ -24,6 +24,9 @@ var config = {
     },{
       test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
       loader: "file-loader"
+    },{
+      test: /\.(png|jpg|jpeg)$/,
+      loader: 'url-loader?limit=8192'
     }]
   },
   plugins: [
