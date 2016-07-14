@@ -33,7 +33,7 @@ var config = {
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
     new HtmlWebpackPlugin({
       hash: true,
-      template: 'build/index.html'
+      template: 'build/index.html.template'
     }),
     new webpack.DefinePlugin({
       'process.env':{
