@@ -1,4 +1,6 @@
 var path = require('path');
+var webpack = require('webpack');
+
 var config = {
   entry: [
       'webpack/hot/dev-server',
@@ -30,7 +32,12 @@ var config = {
       test: /\.(png|jpg|jpeg)$/,
       loader: 'url-loader?limit=8192'
     }]
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.API_URL': JSON.stringify(process.env.API_URL)
+    }),
+  ]
 };
 
 module.exports = config;
